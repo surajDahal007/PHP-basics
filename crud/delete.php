@@ -1,6 +1,6 @@
 <?php
     include 'connect.php';
-
+        
     if (isset($_GET['deleteId'])) {
         $sn = $_GET['deleteId'];
 
