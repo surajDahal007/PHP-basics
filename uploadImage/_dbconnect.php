@@ -8,7 +8,7 @@
 
     if (!$conn) {
         # code...
-        die("Unable to connect to database deu to  ---> ". mysqli_conn_error());
+        die("Unable to connect to database due to  ---> ". mysqli_conn_error());
     }
 
     // echo "<br> <b>Connected successfully. <b>";

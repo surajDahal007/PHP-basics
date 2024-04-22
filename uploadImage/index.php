@@ -5,13 +5,18 @@
     if (isset($_POST['submit'])) {
         $file_name = $_FILES['image']['name'];
         $temp_name = $_FILES['image']['tmp_name'];
+        // temporary file 
         
         $folder = 'Images/'. $file_name;
         $sql = "INSERT INTO `images` (`id`, `file`) VALUES ('', '$file_name')";
 
+        // echo "<h1>$temp_name</h1>";
+
         $query = mysqli_query($conn, $sql);
 
         if (move_uploaded_file($temp_name, $folder)) {
+            // moves uploaded file to new location
+            // (file_name, destination)
             echo '<h2>File Uploaded Successfully.</h2>';
         }
         else {
@@ -38,12 +43,12 @@
     </form>
 
     <!-- <div>
-        <?php
-            $res = mysqli_query($conn, "SELECT * from `images`");
-            while($row = mysqli_fetch_assoc($res)){
+         <?php
+            //$res = mysqli_query($conn, "SELECT * from `images`");
+            //while($row = mysqli_fetch_assoc($res)){
         ?>
-            <img src="Images/ <?php echo $row['file']?>" />
-        <?php }?>
+            <img src="Images/ <?//php echo $row['file']?>" />
+        <?php //}?>
     </div> -->
    
 </body>
